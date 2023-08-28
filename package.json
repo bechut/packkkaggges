@@ -6,14 +6,6 @@
     "gen": "npx nx g @nx/nest:library [name] --buildable --publishable --importPath=@my-workspace/my-nest-lib",
     "build": "npx nx build [name]"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://bechut: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@github.com/bechut/packkkaggges.git",
-    "directory": "packages/*"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "private": true,
   "devDependencies": {
     "@nx/nest": "^16.7.4",
