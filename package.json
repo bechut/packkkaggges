@@ -8,9 +8,10 @@
   },
   "private": true,
   "devDependencies": {
+    "@nx/eslint-plugin": "^16.7.4",
     "@nx/nest": "^16.7.4",
     "nx": "16.7.4",
-    "nx-cloud": "latest"
+    "nx-cloud": "latest",
   },
   "workspaces": [
     "packages/*"
