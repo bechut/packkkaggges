@@ -32,6 +32,16 @@ jobs:
 
       - name: Fetch other branches
         run: git fetch --no-tags --prune --depth=5 origin master
+      
+      - name: Install dependencies
+        run: |
+          if [ -e yarn.lock ]; then
+          yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+          npm ci
+          else
+          npm i
+          fi
 
       - name: Install environment
         run: npm ci
