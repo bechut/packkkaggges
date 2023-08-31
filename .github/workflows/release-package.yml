@@ -1,8 +1,13 @@
 name: Node.js Package
 
 on:
+  push:
+    branches: 
+      - master
   release:
     types: [created]
+
+ 
 
 jobs:
   build:
@@ -17,7 +22,6 @@ jobs:
           npm i
           npm ci
           npm test
-          fi
 
   publish-gpr:
     needs: build
@@ -36,8 +40,9 @@ jobs:
           npm i
           npm ci
           npm test
+          npm run build
+          cp package.json dist/
           cd dist/ && npm publish
-          fi
 
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
